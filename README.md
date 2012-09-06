@@ -11,7 +11,7 @@ Parse date and time according to the subset of ISO 8601 date/time format used in
 ```json
 {
     "require": {
-        "heartsentwined/date-time-parser": "1.0.*"
+        "heartsentwined/date-time-parser": "1.*"
     }
 }
 ```

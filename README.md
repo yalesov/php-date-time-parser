@@ -1,6 +1,6 @@
 # Heartsentwined\DateTimeParser
 
-v1.0.0 [![Build Status](https://secure.travis-ci.org/heartsentwined/date-time-parser.png)](http://travis-ci.org/heartsentwined/date-time-parser)
+v1.0 [![Build Status](https://secure.travis-ci.org/heartsentwined/date-time-parser.png)](http://travis-ci.org/heartsentwined/date-time-parser)
 
 Parse date and time according to the subset of ISO 8601 date/time format used in Vcard [ISO 6350].
 

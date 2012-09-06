@@ -1,6 +1,7 @@
 <?php
 namespace Heartsentwined\DateTimeParser;
 
+use Heartsentwined\ArgValidator\ArgValidator;
 use Heartsentwined\DateTimeParser\Exception;
 
 /**
@@ -25,6 +26,8 @@ class Parser
      */
     public static function parseDateTime($datetime)
     {
+        ArgValiator::assert($datetime, 'string');
+
         list($year, $month, $day, $hour, $minute, $second, $timezone) =
             array_fill(0, 7, null);
 
@@ -151,13 +154,13 @@ class Parser
      * create ISO 8601 date-and-or-time from partial / complete datetime
      * reverse of self::parseDateTime
      *
-     * @param string|null $year
-     * @param string|null $month
-     * @param string|null $day
-     * @param string|null $hour
-     * @param string|null $minute
-     * @param string|null $second
-     * @param string|null $timezone
+     * @param string|int|null $year
+     * @param string|int|null $month
+     * @param string|int|null $day
+     * @param string|int|null $hour
+     * @param string|int|null $minute
+     * @param string|int|null $second
+     * @param string|int|null $timezone
      * @return string
      */
     public static function createDateTime(
@@ -167,6 +170,7 @@ class Parser
         foreach (array(
             'year', 'month', 'day', 'hour', 'minute', 'second', 'timezone'
         ) as $var) {
+            ArgValidator::assert($$var, array('string', 'int', 'null'));
             if ($$var === '') {
                 $$var = null;
             }
@@ -235,9 +239,9 @@ class Parser
      * create ISO 8601 date from partial / complete date
      * reverse of self::parseDate
      *
-     * @param string|null $year
-     * @param string|null $month
-     * @param string|null $day
+     * @param string|int|null $year
+     * @param string|int|null $month
+     * @param string|int|null $day
      * @return @see self::createDateTime
      */
     public static function createDate(
@@ -250,10 +254,10 @@ class Parser
      * create ISO 8601 time from partial / complete time
      * reverse of self::parseTime
      *
-     * @param string|null $hour
-     * @param string|null $minute
-     * @param string|null $second
-     * @param string|null $timezone
+     * @param string|int|null $hour
+     * @param string|int|null $minute
+     * @param string|int|null $second
+     * @param string|int|null $timezone
      * @return @see self::createDateTime
      */
     public static function createTime(
@@ -272,19 +276,25 @@ class Parser
      * otherwise:
      *  return null
      *
-     * @param string|null $year
-     * @param string|null $month
-     * @param string|null $day
-     * @param string|null $hour
-     * @param string|null $minute
-     * @param string|null $second
-     * @param string|null $timezone
+     * @param string|int|null $year
+     * @param string|int|null $month
+     * @param string|int|null $day
+     * @param string|int|null $hour
+     * @param string|int|null $minute
+     * @param string|int|null $second
+     * @param string|int|null $timezone
      * @return int|null
      */
     public static function createTimestamp(
         $year = null, $month = null, $day = null,
         $hour = null, $minute = null, $second = null, $timezone = null)
     {
+        foreach (array(
+            'year', 'month', 'day', 'hour', 'minute', 'second', 'timezone'
+        ) as $var) {
+            ArgValidator::assert($$var, array('string', 'int', 'null'));
+        }
+
         if (is_null($year) || is_null($month) || is_null($day)) {
             return null;
         }
@@ -310,12 +320,12 @@ class Parser
     /*
      * validates a partial / complete datetime
      *
-     * @param string|null $year
-     * @param string|null $month
-     * @param string|null $day
-     * @param string|null $hour
-     * @param string|null $minute
-     * @param string|null $second
+     * @param string|int|null $year
+     * @param string|int|null $month
+     * @param string|int|null $day
+     * @param string|int|null $hour
+     * @param string|int|null $minute
+     * @param string|int|null $second
      * @throws Exception\InvalidArgumentException
      * @return true
      */
@@ -323,6 +333,12 @@ class Parser
         $year = null, $month = null, $day = null,
         $hour = null, $minute = null, $second = null)
     {
+        foreach (array(
+            'year', 'month', 'day', 'hour', 'minute', 'second',
+        ) as $var) {
+            ArgValidator::assert($$var, array('string', 'int', 'null'));
+        }
+
         $daysMap = array(
             1   => 31,
             2   => 29,

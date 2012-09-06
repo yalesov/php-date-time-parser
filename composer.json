@@ -2,7 +2,7 @@
     "name": "heartsentwined/date-time-parser",
     "description": "Parse date and time according to the subset of ISO 8601 date/time format used in Vcard [ISO 6350].",
     "license": "GPL-3.0",
-    "keywords": ["vcard", "datetime", "iso8601", "iso 8601", "iso-8601"],
+    "keywords": ["vcard", "datetime", "iso8601", "iso-8601"],
     "homepage": "https://github.com/heartsentwined/date-time-parser",
     "authors": [
         {

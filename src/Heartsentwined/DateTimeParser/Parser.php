@@ -26,7 +26,7 @@ class Parser
      */
     public static function parseDateTime($datetime)
     {
-        ArgValiator::assert($datetime, 'string');
+        ArgValidator::assert($datetime, 'string');
 
         list($year, $month, $day, $hour, $minute, $second, $timezone) =
             array_fill(0, 7, null);

@@ -2,7 +2,6 @@
 namespace Heartsentwined\Test\DateTimeParser;
 
 use Heartsentwined\DateTimeParser\Parser;
-use Heartsentwined\DateTimeParser\Exception;
 
 class ParserTest extends \PHPUnit_Framework_TestCase
 {

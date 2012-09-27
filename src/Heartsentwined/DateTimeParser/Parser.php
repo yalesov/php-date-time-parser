@@ -14,7 +14,7 @@ class Parser
      * parse a date-and-or-time string
      * standalone time must be prefixed with 'T'
      *
-     * @param string $datetime
+     * @param  string $datetime
      * @return array
      *  'year'      => string|null
      *  'month'     => string|null 01-12
@@ -113,7 +113,6 @@ class Parser
         if ($hour === '') $hour = null;
         if ($minute === '') $minute = null;
         if ($second === '') $second = null;
-
         return array(
             'year'      => $year,
             'month'     => $month,
@@ -128,8 +127,8 @@ class Parser
     /**
      * parse a date
      *
-     * @param string $date
-     * @return @see self::parseDateTime
+     * @param  string $date
+     * @return @see   self::parseDateTime
      */
     public static function parseDate($date)
     {
@@ -139,14 +138,15 @@ class Parser
     /**
      * parse a time
      *
-     * @param string $time
-     * @return @see self::parseDateTime
+     * @param  string $time
+     * @return @see   self::parseDateTime
      */
     public static function parseTime($time)
     {
         if (strpos($time, 'T') === false) {
             $time = "T$time";
         }
+
         return self::parseDateTime($time);
     }
 
@@ -154,13 +154,13 @@ class Parser
      * create ISO 8601 date-and-or-time from partial / complete datetime
      * reverse of self::parseDateTime
      *
-     * @param string|int|null $year
-     * @param string|int|null $month
-     * @param string|int|null $day
-     * @param string|int|null $hour
-     * @param string|int|null $minute
-     * @param string|int|null $second
-     * @param string|int|null $timezone
+     * @param  string|int|null $year
+     * @param  string|int|null $month
+     * @param  string|int|null $day
+     * @param  string|int|null $hour
+     * @param  string|int|null $minute
+     * @param  string|int|null $second
+     * @param  string|int|null $timezone
      * @return string
      */
     public static function createDateTime(
@@ -239,10 +239,10 @@ class Parser
      * create ISO 8601 date from partial / complete date
      * reverse of self::parseDate
      *
-     * @param string|int|null $year
-     * @param string|int|null $month
-     * @param string|int|null $day
-     * @return @see self::createDateTime
+     * @param  string|int|null $year
+     * @param  string|int|null $month
+     * @param  string|int|null $day
+     * @return @see            self::createDateTime
      */
     public static function createDate(
         $year = null, $month = null, $day = null)
@@ -254,11 +254,11 @@ class Parser
      * create ISO 8601 time from partial / complete time
      * reverse of self::parseTime
      *
-     * @param string|int|null $hour
-     * @param string|int|null $minute
-     * @param string|int|null $second
-     * @param string|int|null $timezone
-     * @return @see self::createDateTime
+     * @param  string|int|null $hour
+     * @param  string|int|null $minute
+     * @param  string|int|null $second
+     * @param  string|int|null $timezone
+     * @return @see            self::createDateTime
      */
     public static function createTime(
         $hour = null, $minute = null, $second = null, $timezone = null)
@@ -276,13 +276,13 @@ class Parser
      * otherwise:
      *  return null
      *
-     * @param string|int|null $year
-     * @param string|int|null $month
-     * @param string|int|null $day
-     * @param string|int|null $hour
-     * @param string|int|null $minute
-     * @param string|int|null $second
-     * @param string|int|null $timezone
+     * @param  string|int|null $year
+     * @param  string|int|null $month
+     * @param  string|int|null $day
+     * @param  string|int|null $hour
+     * @param  string|int|null $minute
+     * @param  string|int|null $second
+     * @param  string|int|null $timezone
      * @return int|null
      */
     public static function createTimestamp(
@@ -314,18 +314,19 @@ class Parser
         }
 
         $dateTime = \DateTime::createFromFormat($format, $timeString);
+
         return $dateTime->getTimestamp();
     }
 
     /*
      * validates a partial / complete datetime
      *
-     * @param string|int|null $year
-     * @param string|int|null $month
-     * @param string|int|null $day
-     * @param string|int|null $hour
-     * @param string|int|null $minute
-     * @param string|int|null $second
+     * @param  string|int|null                    $year
+     * @param  string|int|null                    $month
+     * @param  string|int|null                    $day
+     * @param  string|int|null                    $hour
+     * @param  string|int|null                    $minute
+     * @param  string|int|null                    $second
      * @throws Exception\InvalidArgumentException
      * @return true
      */
@@ -359,7 +360,7 @@ class Parser
                 && ($month < 1 || $month > 12))
             || ((!is_null($month) && !is_null($day))
                 && (($month < 1 || $month > 12)
-                    || $day > $daysMap[(int)$month]))
+                    || $day > $daysMap[(int) $month]))
             || ((!is_null($day))
                 && ($day < 1 || $day > 31))) {
             throw new Exception\InvalidArgumentException(sprintf(

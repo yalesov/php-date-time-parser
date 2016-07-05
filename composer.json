@@ -1,31 +1,31 @@
 {
-    "name": "yalesov/date-time-parser",
-    "description": "Parse date and time according to the subset of ISO 8601 date/time format used in Vcard [ISO 6350].",
-    "keywords": ["vcard", "datetime", "iso8601", "iso-8601"],
-    "authors": [
-        {
-            "name": "Yulij Andreevich Lesov",
-            "email": "yalesov@gmail.com"
-        }
-    ],
-    "require": {
-        "php": ">=5.3.3",
-        "yalesov/arg-validator": "2.*"
-    },
-    "autoload": {
-        "psr-0": {
-            "Yalesov\\DateTimeParser": "src/"
-        }
-    },
-    "license": "ISC",
-    "homepage": "https://github.com/yalesov/php-date-time-parser",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/yalesov/php-date-time-parser"
-        }
-    ],
-    "support": {
-        "issues": "https://github.com/yalesov/php-date-time-parser/issues"
+  "name": "yalesov/date-time-parser",
+  "description": "Parse date and time according to the subset of ISO 8601 date/time format used in Vcard [ISO 6350].",
+  "keywords": ["vcard", "datetime", "iso8601", "iso-8601"],
+  "authors": [
+    {
+      "name": "Yulij Andreevich Lesov",
+      "email": "yalesov@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=5.3.3",
+    "yalesov/arg-validator": "2.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Yalesov\\DateTimeParser": "src/"
+    }
+  },
+  "license": "ISC",
+  "homepage": "https://github.com/yalesov/php-date-time-parser",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/yalesov/php-date-time-parser"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/yalesov/php-date-time-parser/issues"
+  }
 }

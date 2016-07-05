@@ -1,6 +1,6 @@
 # Yalesov\DateTimeParser
 
-[![Build Status](https://secure.travis-ci.org/yalesov/date-time-parser.png)](http://travis-ci.org/yalesov/date-time-parser)
+[![Build Status](https://travis-ci.org/yalesov/php-date-time-parser.svg)](https://travis-ci.org/yalesov/php-date-time-parser)
 
 Parse date and time according to the subset of ISO 8601 date/time format used in Vcard [ISO 6350].
 

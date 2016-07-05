@@ -11,7 +11,7 @@ Parse date and time according to the subset of ISO 8601 date/time format used in
 ```json
 {
     "require": {
-        "yalesov/date-time-parser": "1.*"
+        "yalesov/date-time-parser": "2.*"
     }
 }
 ```

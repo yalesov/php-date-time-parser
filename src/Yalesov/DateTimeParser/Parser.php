@@ -299,18 +299,15 @@ class Parser
       return null;
     }
 
-    $format = 'Y-m-d';
+    $format = 'Y-m-d H:i:s';
     $timeString = "$year-$month-$day";
-    if (!is_null($hour)) {
-      $format .= ' H:i:s';
-      $timeString .= " $hour";
-      $timeString .= !is_null($minute) ? ":$minute" : ':00';
-      $timeString .= !is_null($second) ? ":$second" : ':00';
+    $timeString .= !is_null($hour) ? " $hour" : ' 00';
+    $timeString .= !is_null($minute) ? ":$minute" : ':00';
+    $timeString .= !is_null($second) ? ":$second" : ':00';
 
-      if (!is_null($timezone)) {
-        $format .= 'T';
-        $timeString .= $timezone;
-      }
+    if (!is_null($timezone)) {
+      $format .= 'T';
+      $timeString .= $timezone;
     }
 
     $dateTime = \DateTime::createFromFormat($format, $timeString);

@@ -10,9 +10,9 @@ Parse date and time according to the subset of ISO 8601 date/time format used in
 
 ```json
 {
-    "require": {
-        "yalesov/date-time-parser": "2.*"
-    }
+  "require": {
+    "yalesov/date-time-parser": "2.*"
+  }
 }
 ```
 
@@ -24,22 +24,22 @@ Parse date and time according to the subset of ISO 8601 date/time format used in
 use Yalesov\DateTimeParser\Parser;
 
 $datetime = Parser::parseDateTime('19961022T140000+0800');
-// $datetime['year']        = '1996';
-// $datetime['month']       = '10';
-// $datetime['day']         = '22';
-// $datetime['hour']        = '14';
-// $datetime['minute']      = '00';
-// $datetime['second']      = '00';
-// $datetime['timezone']    = '+0800';
+// $datetime['year']     = '1996';
+// $datetime['month']    = '10';
+// $datetime['day']      = '22';
+// $datetime['hour']     = '14';
+// $datetime['minute']   = '00';
+// $datetime['second']   = '00';
+// $datetime['timezone'] = '+0800';
 
 $datetime = Parser::parseDateTime('---22T14');
-// $datetime['year']        = null;
-// $datetime['month']       = null;
-// $datetime['day']         = '22';
-// $datetime['hour']        = '14';
-// $datetime['minute']      = null;
-// $datetime['second']      = null;
-// $datetime['timezone']    = null;
+// $datetime['year']     = null;
+// $datetime['month']    = null;
+// $datetime['day']      = '22';
+// $datetime['hour']     = '14';
+// $datetime['minute']   = null;
+// $datetime['second']   = null;
+// $datetime['timezone'] = null;
 ```
 
 Full function signature:
@@ -86,8 +86,8 @@ Full function signatures:
 
 ```php
 public static function createDateTime(
-    $year = null, $month = null, $day = null,
-    $hour = null, $minute = null, $second = null, $timezone = null)
+  $year = null, $month = null, $day = null,
+  $hour = null, $minute = null, $second = null, $timezone = null)
 ```
 
 ```php
@@ -113,8 +113,8 @@ Note that `0`-prefixed numbers are different from `0`-prefixed strings. For exam
 
 ```php
 public static function createTimestamp(
-    $year = null, $month = null, $day = null,
-    $hour = null, $minute = null, $second = null, $timezone = null)
+  $year = null, $month = null, $day = null,
+  $hour = null, $minute = null, $second = null, $timezone = null)
 ```
 
 Accepted arguments are same as the `create-()` series.

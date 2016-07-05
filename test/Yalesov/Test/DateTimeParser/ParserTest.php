@@ -1,7 +1,7 @@
 <?php
-namespace Heartsentwined\Test\DateTimeParser;
+namespace Yalesov\Test\DateTimeParser;
 
-use Heartsentwined\DateTimeParser\Parser;
+use Yalesov\DateTimeParser\Parser;
 
 class ParserTest extends \PHPUnit_Framework_TestCase
 {

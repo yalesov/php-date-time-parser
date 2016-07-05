@@ -1,8 +1,8 @@
 <?php
-namespace Heartsentwined\DateTimeParser;
+namespace Yalesov\DateTimeParser;
 
-use Heartsentwined\ArgValidator\ArgValidator;
-use Heartsentwined\DateTimeParser\Exception;
+use Yalesov\ArgValidator\ArgValidator;
+use Yalesov\DateTimeParser\Exception;
 
 /**
  * date and time parser

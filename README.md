@@ -1,6 +1,6 @@
-# Heartsentwined\DateTimeParser
+# Yalesov\DateTimeParser
 
-[![Build Status](https://secure.travis-ci.org/heartsentwined/date-time-parser.png)](http://travis-ci.org/heartsentwined/date-time-parser)
+[![Build Status](https://secure.travis-ci.org/yalesov/date-time-parser.png)](http://travis-ci.org/yalesov/date-time-parser)
 
 Parse date and time according to the subset of ISO 8601 date/time format used in Vcard [ISO 6350].
 
@@ -11,7 +11,7 @@ Parse date and time according to the subset of ISO 8601 date/time format used in
 ```json
 {
     "require": {
-        "heartsentwined/date-time-parser": "1.*"
+        "yalesov/date-time-parser": "1.*"
     }
 }
 ```
@@ -21,7 +21,7 @@ Parse date and time according to the subset of ISO 8601 date/time format used in
 ## Parse an ISO-8601 date/time
 
 ```php
-use Heartsentwined\DateTimeParser\Parser;
+use Yalesov\DateTimeParser\Parser;
 
 $datetime = Parser::parseDateTime('19961022T140000+0800');
 // $datetime['year']        = '1996';
@@ -71,7 +71,7 @@ The return array for these two functions are same as `Parser::parseDateTime()`.
 ## Create an ISO-8601 date/time
 
 ```php
-use Heartsentwined\DateTimeParser\Parser;
+use Yalesov\DateTimeParser\Parser;
 
 $expr = Parser::createDateTime('1996', '10', '22', '14', '00', '00', '+0800');
 // $expr = '19961022T140000+0800';

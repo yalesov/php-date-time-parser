@@ -1,7 +1,7 @@
 <?php
-namespace Heartsentwined\DateTimeParser\Exception;
+namespace Yalesov\DateTimeParser\Exception;
 
-use Heartsentwined\DateTimeParser\ExceptionInterface;
+use Yalesov\DateTimeParser\ExceptionInterface;
 
 class InvalidArgumentException
     extends \InvalidArgumentException
